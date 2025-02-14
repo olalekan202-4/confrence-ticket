@@ -1,0 +1,245 @@
+body {
+  background-color: #041E23;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 30px;
+  border: 1px solid #036477;
+  border-radius: 15px;
+}
+
+.nav-mid {
+  display: flex;
+  gap: 50px;
+  color: gray;
+}
+
+.my-tickets {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.726);
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: oblique;
+  color: color-mix(in xyz, #036477 60%, white 40%);
+  text-shadow: white 2px 0px
+}
+
+/* app styling */
+
+.app-container {
+  border: 1px solid #036477;
+  border-radius: 18px;
+  padding: 20px 50px;
+  margin-left: 30%;
+  text-align: center;
+  max-width: fit-content;
+}
+
+.ticket-selection1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket1 {
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.932); 
+}
+
+.line-bar {
+  padding: 2px;
+  background: linear-gradient(to right, #036477 30%, #0364772c 70%)  
+}
+
+.app-container2 {
+  border: 1px solid #036477;
+  border-radius: 15px;
+  padding: 20px 50px;
+  margin: 30px;
+  text-align: center;
+  max-width: fit-content;
+  box-shadow: inset #036477 10px 0px 10px 0px;
+}
+
+.teche {
+  font-size: 35px;
+  font-weight: bolder;
+ font-family: cursive;
+}
+
+.teche-info {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.767);
+  margin: 10px; 
+}
+
+hr {
+  border: 1px solid #036477;
+}
+
+.ticket-type {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-size: 12px;
+  margin: 10px 0px;
+}
+
+.ticket-options {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid #0364771f;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#free-box, #vip-box, #vvip-box {
+  padding: 10px;
+  border: 1px solid #036477;
+  border-radius: 15px;
+  max-width: 300px;
+}
+
+.free {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.regular {
+  text-align: left;
+  font-size: 14px;
+}
+
+.ticket-option.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.ticket-quantity {
+  margin: 20px 0px;
+  text-align: left;
+}
+
+.ticket-quantity input {
+ margin-top: 10px;
+ color: white;
+ background-color: #041E23;
+ border: 1px solid  #036477;
+ padding:8px 15px;
+ border-radius: 10px;
+ width: 480px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 250px;
+  border: 1px solid #036477;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group .cancel-button {
+  border: 1px solid #036477;
+  background-color:#041E23;
+  color: #000;
+  border-radius: 10px;
+}
+
+.button-group .cancel-button:hover {
+  background-color: #999;
+}
+
+.button-group .next-button {
+  background-color: #041E23;
+  color: white;
+  border: 1px solid #036477;
+  border-radius: 10px;
+}
+
+.button-group .next-button:hover {
+  background-color: #0057b33b;
+}
+
+
+.user-details-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.user-details-form label {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.user-details-form input,
+.user-details-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #0057b33b;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.user-details-form textarea {
+  resize: vertical; 
+  min-height: 100px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group .back-button {
+  background-color: #0057b33b;
+  color: #000;
+}
+
+.button-group .back-button:hover {
+  background-color: #999;
+}
+
+.button-group .submit-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-group .submit-button:hover {
+  background-color: #0056b3;
+}
