@@ -9,24 +9,23 @@ import jsPDF from 'jspdf';
 import Nav from './header'
 
 const App = () => {
-  const [step, setStep] = useState(1); // 1: Ticket Selection, 2: User Details, 3: Confirmation
+  const [step, setStep] = useState(1);
   const [ticketDetails, setTicketDetails] = useState({ ticketType: '', numberOfTickets: 1 });
   const [userDetails, setUserDetails] = useState({ name: '', email: '', image: null });
   const [tickets, setTickets] = useState([]);
-  const [isBooked, setIsBooked] = useState(false); // Track if the ticket is booked
+  const [isBooked, setIsBooked] = useState(false);
 
   const handleSelectTicket = ({ ticketType, numberOfTickets }) => {
     setTicketDetails({ ticketType, numberOfTickets });
-    setStep(2); // Move to the user details form
+    setStep(2);
   };
 
   const handleSubmitUserDetails = ({ name, email, image }) => {
     setUserDetails({ name, email, image });
 
-    // Generate tickets
     const newTickets = Array.from({ length: ticketDetails.numberOfTickets }, () => ({
       ticketType: ticketDetails.ticketType,
-      ticketId: uuidv4(), // Generate a unique ticket ID
+      ticketId: uuidv4(),
     }));
     setTickets(newTickets);
 
@@ -35,7 +34,7 @@ const App = () => {
   };
 
   const handleBack = () => {
-    setStep(1); // Go back to ticket selection
+    setStep(1);
   };
 
   const handleDownloadTicket = () => {
@@ -44,19 +43,17 @@ const App = () => {
     if (ticketElement) {
       html2canvas(ticketElement).then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-
-        // Option 1: Download as Image
         const link = document.createElement('a');
         link.href = imgData;
-        link.download = 'conference_ticket.png'; // File name for download
+        link.download = 'conference_ticket.png';
         document.body.appendChild(link);
-        link.click(); // Trigger the download
-        document.body.removeChild(link); // Clean up
+        link.click(); 
+        document.body.removeChild(link);
         const pdf = new jsPDF();
-        const imgWidth = 210; // A4 width in mm
+        const imgWidth = 210; 
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
         pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-        pdf.save('conference_ticket.pdf'); // Save as PDF
+        pdf.save('conference_ticket.pdf');
       }).catch((error) => {
         console.error('Error capturing ticket:', error);
       });
@@ -92,10 +89,8 @@ const App = () => {
               <div>
                 {isBooked && (
                   <div className="confirmation-message">
-                    <h2>Your ticket is booked!</h2>
-                    <p>Check your email for a copy, or you can download it below.</p>
-                    <button onClick={handleDownloadTicket}>Download Ticket</button>
-                    <button onClick={() => setStep(1)}>Book Another Ticket</button>
+                    <div className="booked">Your ticket is Booked!</div>
+                    <div>Check your email for a copy, or you can download it below.</div>
                   </div>
                 )}
                 {tickets.map((ticket, index) => (
@@ -108,6 +103,11 @@ const App = () => {
                     ticketId={ticket.ticketId}
                   />
                 ))}
+
+                <div className="button-group">
+                  <button onClick={handleDownloadTicket} className="back-button">Download Ticket</button>
+                  <button onClick={() => setStep(1)} className="back-button">Book Another Ticket</button>
+                </div>
             </div>
           )}
           
