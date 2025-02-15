@@ -217,7 +217,6 @@ hr {
 }
 
 .button-group button {
-  flex: 1;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -249,4 +248,100 @@ hr {
   font-size: 30px;
   font-weight: bold;
   margin: 15px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-mid {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .app-container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .ticket-selection1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ticket1 {
+    font-size: 18px;
+  }
+
+  .teche {
+    font-size: 24px;
+  }
+
+  .teche-info {
+    font-size: 12px;
+  }
+
+  .ticket-options {
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+  }
+
+  #free-box, #vip-box, #vvip-box {
+    width: 100%;
+  }
+
+  .ticket-quantity input {
+    max-width: 400px;
+   } 
+
+   .button-group button {
+    display: flex;
+    max-width: 200px;
+   }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .app-container {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .ticket1 {
+    font-size: 16px;
+  }
+
+  .teche {
+    font-size: 20px;
+  }
+
+  .teche-info {
+    font-size: 12px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .ticket-quantity input {
+    width: 280px;
+   }
 }
