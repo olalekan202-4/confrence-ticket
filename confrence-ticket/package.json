@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "homepage": "https://olalekan202-4.github.io/confrence-ticket",
+ "scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
   "dependencies": {
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
@@ -31,3 +34,4 @@
     "vite": "^6.1.0"
   }
 }
+
