@@ -252,27 +252,13 @@ hr {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .nav-mid {
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 20px;
+    display: none;
   }
 
   .app-container {
     margin: 10px;
     padding: 10px;
-  }
-
-  .ticket-selection1 {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .ticket1 {
@@ -305,16 +291,14 @@ hr {
     display: flex;
     max-width: 200px;
    }
+
+   .user-details-form input,
+    .user-details-form textarea {
+      width: 97%;
+  }
 }
 
 @media (max-width: 480px) {
-  .nav {
-    padding: 10px;
-  }
-
-  .logo {
-    font-size: 18px;
-  }
 
   .app-container {
     margin: 5px;

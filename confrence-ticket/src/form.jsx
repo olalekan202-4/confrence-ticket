@@ -17,7 +17,7 @@ const UserDetailsForm = ({ onSubmit, onBack }) => {
 
   return (
     <div className="user-details-form">
-      <h2>Enter Your Details</h2>
+      <h3>Enter Your Details</h3>
       <form onSubmit={handleSubmit}>
         <label>
           Name:

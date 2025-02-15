@@ -1,8 +1,11 @@
+import Logo from './assets/navbar-logo.png'
 function Header () {
   return (
     <div>
       <div className = "nav">
-        <div className="logo">ticz</div>
+        <div>
+          <img src={Logo} alt="logo" />
+        </div>
         <div className = "nav-mid">
           <div>Events</div>
           <div>My Tickets</div>
