@@ -209,21 +209,6 @@ hr {
   min-height: 100px;
 }
 
-.button-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.button-group button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
 .button-group .back-button {
   background-color: #0057b33b;
@@ -315,10 +300,6 @@ hr {
 
   .teche-info {
     font-size: 12px;
-  }
-
-  .button-group {
-    flex-direction: column;
   }
 
   .button-group button {
