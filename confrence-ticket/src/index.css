@@ -258,6 +258,10 @@ hr {
     font-size: 12px;
   }
 
+  .my-tickets {
+    padding: 5px;
+  }
+
   .ticket-options {
     display: flex;
     justify-content: start;
