@@ -1,28 +1,69 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TicketSelection from './TicketSelection';
 import UserDetailsForm from './form';
 import Ticket from './ticket';
 import { v4 as uuidv4 } from 'uuid';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import Nav from './header';
+import Header from './header';
 
 const App = () => {
-  const [step, setStep] = useState(1); // 1: Ticket Selection, 2: Attendee Details, 3: Confirmation
-  const [ticketDetails, setTicketDetails] = useState({ ticketType: '', numberOfTickets: 1 });
-  const [userDetails, setUserDetails] = useState({ name: '', email: '', image: null });
-  const [tickets, setTickets] = useState([]);
-  const [isBooked, setIsBooked] = useState(false);
+  // Load data from localStorage on initial render
+  const [step, setStep] = useState(() => {
+    const savedStep = localStorage.getItem('step');
+    return savedStep ? parseInt(savedStep, 10) : 1;
+  });
+
+  const [ticketDetails, setTicketDetails] = useState(() => {
+    const savedTicketDetails = localStorage.getItem('ticketDetails');
+    return savedTicketDetails ? JSON.parse(savedTicketDetails) : { ticketType: '', numberOfTickets: 1 };
+  });
+
+  const [userDetails, setUserDetails] = useState(() => {
+    const savedUserDetails = localStorage.getItem('userDetails');
+    return savedUserDetails ? JSON.parse(savedUserDetails) : { name: '', email: '', image: null };
+  });
+
+  const [tickets, setTickets] = useState(() => {
+    const savedTickets = localStorage.getItem('tickets');
+    return savedTickets ? JSON.parse(savedTickets) : [];
+  });
+
+  const [isBooked, setIsBooked] = useState(() => {
+    const savedIsBooked = localStorage.getItem('isBooked');
+    return savedIsBooked ? JSON.parse(savedIsBooked) : false;
+  });
+
+  
+  useEffect(() => {
+    localStorage.setItem('step', step);
+  }, [step]);
+
+  useEffect(() => {
+    localStorage.setItem('ticketDetails', JSON.stringify(ticketDetails));
+  }, [ticketDetails]);
+
+  useEffect(() => {
+    localStorage.setItem('userDetails', JSON.stringify(userDetails));
+  }, [userDetails]);
+
+  useEffect(() => {
+    localStorage.setItem('tickets', JSON.stringify(tickets));
+  }, [tickets]);
+
+  useEffect(() => {
+    localStorage.setItem('isBooked', JSON.stringify(isBooked));
+  }, [isBooked]);
 
   const handleSelectTicket = ({ ticketType, numberOfTickets }) => {
     setTicketDetails({ ticketType, numberOfTickets });
-    setStep(2); // Move to Attendee Details
+    setStep(2); 
   };
 
   const handleSubmitUserDetails = ({ name, email, image }) => {
     setUserDetails({ name, email, image });
 
-    // Generate tickets
+    
     const newTickets = Array.from({ length: ticketDetails.numberOfTickets }, () => ({
       ticketType: ticketDetails.ticketType,
       ticketId: uuidv4(),
@@ -30,11 +71,11 @@ const App = () => {
     setTickets(newTickets);
 
     setIsBooked(true);
-    setStep(3); // Move to Confirmation
+    setStep(3); 
   };
 
   const handleBack = () => {
-    setStep(1); // Go back to Ticket Selection
+    setStep(1); //
   };
 
   const handleDownloadTicket = () => {
@@ -62,9 +103,13 @@ const App = () => {
     }
   };
 
+  const handleMyTicketsClick = () => {
+    setStep(1);
+  };
+
   return (
     <div className="App">
-      <Nav />
+      <Header onMyTicketsClick={handleMyTicketsClick} />
       <div className="app-container">
         <div className="ticket-selection1">
           <div className="ticket1">
