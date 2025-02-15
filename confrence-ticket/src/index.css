@@ -58,8 +58,9 @@ body {
 }
 
 .line-bar {
+  margin: 0 12px;
   padding: 2px;
-  background: linear-gradient(to right, #036477 30%, #0364772c 70%)  
+  background: linear-gradient(to right, #036477 30%, #03647754 70%)  
 }
 
 .app-container2 {
