@@ -259,7 +259,8 @@ hr {
   }
 
   .my-tickets {
-    padding: 5px;
+    padding: 8px;
+    font-size: 14px;
   }
 
   .ticket-options {
