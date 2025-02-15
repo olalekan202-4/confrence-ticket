@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://olalekan202-4.github.io/confrence-ticket",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -32,4 +33,3 @@
   }
 }
 
-"homepage": "https://olalekan202-4.github.io/confrence-ticket"
