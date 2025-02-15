@@ -3,7 +3,7 @@ const Ticket = ({ name, email, image, ticketType, ticketId }) => {
   return (
     <div className="ticket">
       <h2>Conference Ticket</h2>
-      <img src={image} alt="User" style={{ width: '100px', height: '100px', borderRadius: '50%' }} />
+      <img src={image} alt="User" style={{ width: '250px', height: '250px', borderRadius: '10%' }} />
       <p>Name: {name}</p>
       <p>Email: {email}</p>
       <p>Ticket Type: {ticketType}</p>
